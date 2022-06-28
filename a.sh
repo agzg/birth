@@ -9,13 +9,14 @@ sudo apt install cowsay -y
 cowsay "Wilkommen, Agzg!"
 
 # Configure ~/.profile.
-wget -qO $HOME/.profile https://raw.githubusercontent.com/nag-a-ram/revive/main/a/a.profile?token=GHSAT0AAAAAABVNIP4E2NIB6IMVY5CTJWA4YVMGY5A
+wget -qO $HOME/.profile https://raw.githubusercontent.com/agzg/birth/d5fe53ee43782db1eadd621bd607a4f023c94ee7/.profile?token=GHSAT0AAAAAABV4OMKCXIFYWRALW2Y6RRBUYV234IQ
 source $HOME/.profile
 
 # Install Google Chrome.
 echo "Installing Google Chrome..."
 wget -qO $HOME/Downloads/google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install $HOME/Downloads/google-chrome.deb -y
+echo "Removing Firefox..."
 sudo apt remove firefox* -y
 
 # Install Python 3.10.
@@ -24,11 +25,13 @@ sudo apt install software-properties-common -y
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt update
 sudo apt install python3.10-full python3.10-dev python3-pip python3-tk -y
-pip install squares, pandas, numpy, pyqt5
+pip install pandas, numpy, pyqt5, pillow, ghicon
 
-# Install Golang.
+# Install curl.
 echo "Installing curl..."
 sudo apt install curl -y
+
+# Install Golang.
 version=$(curl -s https://go.dev/VERSION?m=text)
 echo "Installing Go ${version:2}..."
 wget -qO $HOME/Downloads/go.tar.gz https://go.dev/dl/$version.linux-amd64.tar.gz

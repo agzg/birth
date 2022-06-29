@@ -62,14 +62,16 @@ sudo apt update
 sudo apt install sublime-text -y
 
 # Install Obsidian.
-version=$(curl curl -Ls -o /dev/null -w %{url_effective} https://github.com/obsidianmd/obsidian-releases/releases/latest)
+version=$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/obsidianmd/obsidian-releases/releases/latest)
 version=(${version//// })
 version=${version[-1]:1}
 echo "Installing Obsidian v$version..."
 wget -qO $HOME/Downloads/obsidian.AppImage https://github.com/obsidianmd/obsidian-releases/releases/download/v$version/Obsidian-$version.AppImage
 chmod +x $HOME/Downloads/obsidian.AppImage
 $HOME/Downloads/obsidian.AppImage --appimage-extract
+sudo mkdir $HOME/.icons
 sudo cp squashfs-root/usr/share/icons/hicolor/512x512/apps/obsidian.png $HOME/.icons
+sudo mkdir -p $HOME/.local/bin
 sudo mv squashfs-root $HOME/.local/bin/obsidian
 echo "[Desktop Entry]
 Name=Obsidian

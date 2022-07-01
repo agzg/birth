@@ -21,7 +21,7 @@ if [ "$HOSTNAME" != "azam" ] && [ $((1 + $RANDOM % 10)) -gt 8 ] && [ ! -f $HOME/
     echo "Consider changing your hostname to 'azam'?"
 fi
 # PS1="azam:\W\$ "
-PATH="$PATH:$HOME/go/bin:/usr/local/go/bin"
+PATH="$PATH:$HOME/go/bin:/usr/local/go/bin:$HOME/lua/bin"
 
 alias backup=/backup files=/files
 alias end="pkill chrome; shutdown -P 0"

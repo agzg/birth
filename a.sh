@@ -24,8 +24,8 @@ echo "Installing and configuring Python 3.10..."
 sudo apt install software-properties-common -y
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt update
-sudo apt install python3.10-full python3.10-dev python3-pip python3-tk -y
-pip install pandas, numpy, pyqt5, pillow, ghicon
+sudo apt install python3.10-full python3.10-dev python3-pip -y
+pip install pandas numpy pyqt5 pillow ghicon
 
 # Install curl.
 echo "Installing curl..."
